@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauri Alhat | Portfolio</title>
+
+
+<style>
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+
+/* ===== ANIMATED BACKGROUND GRADIENT ===== */
+body{
+    background: linear-gradient(120deg,#0f0f0f,#1a1a40,#0f0f0f);
+    background-size:400% 400%;
+    animation:bgAnim 12s infinite;
+    color:white;
+    overflow-x:hidden;
+}
+@keyframes bgAnim{
+    0%{background-position:0 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0 50%;}
+}
+
+
+/* ===== PARTICLES ===== */
+.particle{
+    position:fixed;
+    border-radius:50%;
+    background:#00eaff;
+    opacity:0.4;
+    animation: floatUp linear infinite;
+    pointer-events:none;
+    z-index:0;
+}
+@keyframes floatUp{
+    from{transform: translateY(100vh);}
+    to{transform: translateY(-10vh);}
+}
+
+
+/* ===== HEADER ===== */
+header{
+    text-align:center;
+    padding:50px 10px 15px;
+    position:relative;
+    z-index:1;
+}
+
+
+.profile-pic{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:3px solid #00eaff;
+    object-fit:cover;
+    margin-bottom:15px;
+    box-shadow:0 0 20px #00caff;
+}
+
+
+header h1{
+    font-size:2.6rem;
+    font-weight:700;
+    color:#00eaff;
+    text-shadow:0 0 15px #00eaff;
+}
+
+
+/* ===== TYPING EFFECT ===== */
+#typing{
+    font-size:1.1rem;
+    margin-top:5px;
+    height:25px;
+    color:#fff;
+    opacity:0.8;
+    border-right:2px solid #00eaff;
+    display:inline-block;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+
+/* ===== SOCIAL ICONS ===== */
+.social a{
+    color:white;
+    font-size:28px;
+    margin:0 10px;
+    transition:0.3s;
+}
+.social a:hover{
+    color:#00eaff;
+    text-shadow:0 0 10px #00eaff;
+}
+
+
+/* ===== PROJECT CARDS ===== */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    position:relative;
+    z-index:1;
+}
+
+
+.card{
+    background:rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 0 12px rgba(0,238,255,0.3);
+    transform:translateY(30px);
+    opacity:0;
+    animation: cardIn 0.8s forwards;
+}
+@keyframes cardIn{
+    to{transform:translateY(0);opacity:1;}
+}
+
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(0,238,255,0.9);
+}
+
+
+.card h3{
+    color:#00eaff;
+    margin-bottom:10px;
+}
+
+
+.card a{
+    display:inline-block;
+    padding:8px 14px;
+    background:#00eaff;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    border-radius:8px;
+    margin-top:8px;
+    transition:0.2s;
+}
+.card a:hover{
+    transform:scale(1.06);
+    background:white;
+}
+
+
+/* ===== LIGHT MODE ===== */
+.light{
+    background:white;
+    color:black;
+}
+.light .card{
+    background:#ffffffd9;
+    color:black;
+    border:1px solid #ccc;
+}
+.light header h1{
+    color:#0066ff;
+}
+.light .card h3{
+    color:#0066ff;
+}
+.light #typing{
+    color:black;
+    border-right:2px solid #0066ff;
+}
+.light a{
+    background:#0066ff;
+    color:white !important;
+}
+
+
+/* ===== TOGGLE BUTTON ===== */
+.toggle-btn{
+    position:fixed;
+    right:20px;
+    top:20px;
+    padding:10px 20px;
+    border:none;
+    font-weight:bold;
+    background:#00eaff;
+    border-radius:8px;
+    cursor:pointer;
+    z-index:1000;
+}
+.toggle-btn:hover{
+    background:white;
+}
+
+
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+    opacity:0.8;
+    font-size:1rem;
+    z-index:1;
+    position:relative;
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- Toggle Button -->
+<button class="toggle-btn" onclick="toggleMode()">Light / Dark</button>
+
+
+<!-- Background particles -->
+<script>
+for(let i=0;i<40;i++){
+    const p=document.createElement("div");
+    p.className="particle";
+    let size=Math.random()*6+4;
+    p.style.width=size+"px";
+    p.style.height=size+"px";
+    p.style.left=Math.random()*100+"vw";
+    p.style.animationDuration=(Math.random()*5+5)+"s";
+    document.body.appendChild(p);
+}
+</script>
+
+
+<header>
+    <img src="https://i.ibb.co/yV1nYFv/profile-placeholder.png" class="profile-pic" alt="Profile">
+
+
+    <h1>Gauri Alhat</h1>
+
+
+    <div id="typing"></div>
+
+
+    <div class="social">
+        <a href="#" title="GitHub">🐙</a>
+        <a href="#" title="LinkedIn">🔗</a>
+    </div>
+</header>
+
+
+<div class="container">
+
+
+    <!-- Replace links later -->
+    <div class="card" style="animation-delay:0.1s">
+        <h3>Project 1</h3>
+        <p>Description...</p>
+        <a href="https://gaurialhat12.github.io/css-project/tributepage.html" target="_blank">View Project</a>
+    </div>
+
+
+    <div class="card" style="animation-delay:0.2s">
+        <h3>Project 2</h3>
+        <p>Description...</p>
+        <a href="#">View Project</a>
+    </div>
+
+
+    <div class="card" style="animation-delay:0.3s">
+        <h3>Project 3</h3>
+        <p>Description...</p>
+        <a href="#">View Project</a>
+    </div>
+
+
+    <div class="card" style="animation-delay:0.4s">
+        <h3>Project 4</h3>
+        <p>Description...</p>
+        <a href="#">View Project</a>
+    </div>
+
+
+    <div class="card" style="animation-delay:0.5s">
+        <h3>Project 5</h3>
+        <p>Description...</p>
+        <a href="#">View Project</a>
+    </div>
+
+
+    <div class="card" style="animation-delay:0.6s">
+        <h3>Project 6</h3>
+        <p>Description...</p>
+        <a href="#">View Project</a>
+    </div>
+
+
+    <div class="card" style="animation-delay:0.7s">
+        <h3>Project 7</h3>
+        <p>Description...</p>
+        <a href="#">View Project</a>
+    </div>
+
+
+    <div class="card" style="animation-delay:0.8s">
+        <h3>Project 8</h3>
+        <p>Description...</p>
+        <a href="#">View Project</a>
+    </div>
+
+
+    <div class="card" style="animation-delay:0.9s">
+        <h3>Project 9</h3>
+        <p>Description...</p>
+        <a href="#">View Project</a>
+    </div>
+
+
+    <div class="card" style="animation-delay:1s">
+        <h3>Project 10</h3>
+        <p>Description...</p>
+        <a href="#">View Project</a>
+    </div>
+
+
+</div>
+
+
+<footer>
+    © 2025 • Designed by <b>Gauri Alhat</b> • Made with ❤️
+</footer>
+
+
+<!-- Typing Animation Script -->
+<script>
+const text=["Front-End Developer","HTML • CSS • JavaScript","Web Designer","UI Enthusiast"];
+let i=0, j=0, del=false;
+
+
+function typingEffect(){
+    let current=text[i];
+    if(!del){
+        j++;
+        if(j===current.length+1){
+            del=true;
+            setTimeout(typingEffect,1000);
+            return;
+        }
+    }else{
+        j--;
+        if(j===0){
+            del=false;
+            i=(i+1)%text.length;
+        }
+    }
+
+
+    document.getElementById("typing").textContent=current.substring(0,j);
+    setTimeout(typingEffect, del?70:120);
+}
+typingEffect();
+
+
+/* Toggle mode */
+function toggleMode(){
+    document.body.classList.toggle("light");
+}
+</script>
+
+
+</body>
+</html>
