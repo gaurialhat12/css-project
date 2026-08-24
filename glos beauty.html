@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Cosmetics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>💄 Glos Beauty</h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <span class="cart">🛒 Cart: <b id="cartCount">0</b></span>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Beauty That Makes You Glow ✨</h2>
+        <p>Discover your favourite cosmetic products.</p>
+        <button onclick="showProducts()">Shop Now</button>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2>Our Products</h2>
+
+        <input type="text" id="search" 
+               placeholder="Search products..."
+               onkeyup="searchProducts()">
+
+        <div class="products">
+
+            <div class="product">
+                <div class="product-img">💄</div>
+                <h3>Matte Lipstick</h3>
+                <p>Long-lasting beautiful lipstick.</p>
+                <h4>₹399</h4>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <div class="product-img">🧴</div>
+                <h3>Face Serum</h3>
+                <p>Lightweight daily face serum.</p>
+                <h4>₹599</h4>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <div class="product-img">🌸</div>
+                <h3>Blush</h3>
+                <p>Soft and natural-looking blush.</p>
+                <h4>₹299</h4>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <div class="product-img">✨</div>
+                <h3>Highlighter</h3>
+                <p>Give your skin a beautiful glow.</p>
+                <h4>₹449</h4>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>
+            Glow Cosmetics offers simple, stylish and affordable
+            beauty products for everyday use.
+        </p>
+    </section>
+
+    <footer id="contact">
+        <h3>Glow Cosmetics</h3>
+        <p>Email: glowcosmetics@example.com</p>
+        <p>© 2026 Glow Cosmetics</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
